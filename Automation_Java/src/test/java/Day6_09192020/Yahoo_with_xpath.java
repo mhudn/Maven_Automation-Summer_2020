@@ -57,7 +57,9 @@ public class Yahoo_with_xpath
         jse.executeScript("scroll(0,-5000)");
 
 
-        //driver.quit();
+
+        Thread.sleep(5000);
+        driver.quit();
 
     }
 }
