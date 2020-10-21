@@ -131,7 +131,6 @@ public class Assignment_7 extends Abstract_Class
 
             Label label = new Label(14,i,result);
             writableSheet.addCell(label);
-
         }
 
         Thread.sleep(5000);
