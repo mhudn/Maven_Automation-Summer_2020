@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation Suite">
+    <test name="Google Cross Browser Test" preserve-order="true">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="Action_Items.Assignment_8" />
+        </classes>
+    </test> <!-- Test -->
+
+    <test name="Firefox Cross Browser Test" preserve-order="true">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="Action_Items.Assignment_8" />
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

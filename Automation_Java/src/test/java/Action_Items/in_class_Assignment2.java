@@ -16,7 +16,7 @@ public class in_class_Assignment2 extends Abstract_Class
     @Test
     public void YahooInClass() throws InterruptedException
     {
-        Reusable_Methods_Loggers.checkTitle(driver,"https://yahoo.com","Yahoo");
+        Reusable_Methods_Loggers.checkTitle(driver,"https://yahoo.com",logger,"Yahoo");
 
         driver.navigate().to("https://yahoo.com");
         Thread.sleep(2000);
