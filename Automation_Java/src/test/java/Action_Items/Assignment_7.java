@@ -43,7 +43,7 @@ public class Assignment_7 extends Abstract_Class
 
         //System.out.println(rowCount);
 
-        Reusable_Methods_Loggers.checkTitle(driver, "https://www.express.com", "Men's and Women's Clothing");
+        Reusable_Methods_Loggers.checkTitle(driver, "https://www.express.com", logger, "Men's and Women's Clothing");
 
         for (int i = 1; i < rowCount; i++)
         {

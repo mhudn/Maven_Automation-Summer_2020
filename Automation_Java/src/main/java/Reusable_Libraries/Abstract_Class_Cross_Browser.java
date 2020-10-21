@@ -42,7 +42,8 @@ public class Abstract_Class_Cross_Browser {
     }//end of before method
 
     @AfterMethod
-    public void endTest(){
+    public void endTest()
+    {
         reports.endTest(logger);
     }//end of after method
 

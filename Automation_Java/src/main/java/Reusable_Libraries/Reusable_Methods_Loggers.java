@@ -10,6 +10,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,7 +21,8 @@ import java.util.ArrayList;
 public class Reusable_Methods_Loggers
 {
     static int timeOut = 10;
-    public static void switchTab(WebDriver driver,int index) throws InterruptedException {
+    public static void switchTab(WebDriver driver,int index) throws InterruptedException
+    {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(index));
         Thread.sleep(2000);
@@ -85,7 +90,7 @@ public class Reusable_Methods_Loggers
     }//end of screenshot method
 
 
-    public static void checkTitle(WebDriver driver, String webAddress, String expectedTitle)
+    public static void checkTitle(WebDriver driver, String webAddress, ExtentTest logger, String expectedTitle)
     {
 
         WebDriverWait wait = new WebDriverWait(driver,timeOut);
@@ -96,10 +101,12 @@ public class Reusable_Methods_Loggers
 
         if(actualTitle.contains(expectedTitle))
         {
+            logger.log(LogStatus.INFO,"Home page title contains: " + expectedTitle + "\nActual title is = " + actualTitle);
             System.out.println("\nHome page title contains: " + expectedTitle + "\nActual title is = " + actualTitle);
         }
         else
         {
+            logger.log(LogStatus.FAIL,"Home page title DOES NOT contain: " + expectedTitle + "\nActual title is = " + actualTitle);
             System.out.println("\nHome page title DOES NOT contain: " + expectedTitle + "\nActual title is = " + actualTitle);
         }
     }
@@ -290,6 +297,26 @@ public class Reusable_Methods_Loggers
             getScreenShot(driver,logger,elementName);
         }
     }//end of type and submit method
+
+
+    //method to upload a file(image,doc, etc...) from your computer by using robot command
+    public static void uploadFile(String filePath) throws AWTException
+    {
+        StringSelection ss = new StringSelection(filePath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+        Robot robot = new Robot();
+        robot.delay(1000);
+        //imitate mouse events like ENTER, CTRL+C, CTRL+V
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+    }//end of upload file using Robot command
+
 
 
 
