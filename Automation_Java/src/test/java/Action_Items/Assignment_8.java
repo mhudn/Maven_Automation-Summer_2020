@@ -39,9 +39,11 @@ public class Assignment_8 extends Abstract_Class_Cross_Browser
         Thread.sleep(3000);
         Reusable_Methods_Loggers.typeAndSubmit(driver,"//*[@id='loc_seacrh_text']","11230",logger," zipCode");
         Thread.sleep(2000);
-        /*String msg1 =*/ Reusable_Methods_Loggers.captureText(driver,"//*[@id='5732']",logger,"Location Name and Distance");
+        /*String msg1 =*/
+        Reusable_Methods_Loggers.captureText(driver,"//*[@id='5732']",logger,"Location Name and Distance");
         Thread.sleep(2000);
-        /*String msg2 =*/ Reusable_Methods_Loggers.captureText(driver,"//*[@class='details']",logger,"Location Address, Phone Number and Time");
+        /*String msg2 =*/
+        Reusable_Methods_Loggers.captureText(driver,"//*[@class='details']",logger,"Location Address, Phone Number and Time");
         Thread.sleep(2000);
         //logger.log(LogStatus.INFO,msg1 + msg2);
 
