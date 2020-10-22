@@ -50,7 +50,7 @@ public class Abstract_Class_Cross_Browser {
     @AfterSuite
     public void endSession() throws InterruptedException {
         reports.flush();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         driver.quit();
     }//end of afterSuite
 
