@@ -240,9 +240,9 @@ public class Reusable_Methods_Loggers
         try
         {
             System.out.println("\nCapturing " + elementName);
-            logger.log(LogStatus.INFO,"Capturing " + elementName);
             text = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator))).getText();
             System.out.println(text);
+            logger.log(LogStatus.INFO,"Capturing " + elementName + " " + text);
         }
         catch (Exception err)
         {
@@ -302,28 +302,28 @@ public class Reusable_Methods_Loggers
     //method to upload a file(image,doc, etc...) from your computer by using robot command
     public static void uploadFile(String filePath) throws AWTException
     {
-        StringSelection ss = new StringSelection(filePath);
-        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
-        Robot robot = new Robot();
-        robot.delay(1000);
-        //imitate mouse events like ENTER, CTRL+C, CTRL+V
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_V);
-        robot.keyRelease(KeyEvent.VK_V);
-        robot.keyRelease(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        try
+        {
+            StringSelection ss = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss,null);
+            Robot robot = new Robot();
+            robot.delay(1000);
+            //imitate mouse events like ENTER, CTRL+C, CTRL+V
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+        }
+
+        catch (Exception exp)
+        {
+            exp.printStackTrace();
+        }
+
     }//end of upload file using Robot command
-
-
-
-
-
-
-
-
-
 
 }
