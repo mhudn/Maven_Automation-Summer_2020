@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class TestNG_Assertions
+public class TestNG_Assertions_SoftAssert_and_HardAssert
 {
     @Test
     public void assertions() throws InterruptedException {

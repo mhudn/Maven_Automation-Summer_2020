@@ -46,7 +46,6 @@ public class Assignment_8 extends Abstract_Class_Cross_Browser
         Reusable_Methods_Loggers.captureText(driver,"//*[@class='details']",logger,"Location Address, Phone Number and Time");
         Thread.sleep(2000);
         //logger.log(LogStatus.INFO,msg1 + msg2);
-
     }
 
 }

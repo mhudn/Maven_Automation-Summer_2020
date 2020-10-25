@@ -33,8 +33,8 @@ public class Reusable_Methods_Loggers
 
 
         //kill all chrome driver instance before opening a new one
-        Thread.sleep(1000);
-        Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
+        //Thread.sleep(1000);
+        //Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
         //mac/windows
         //Runtime.getRuntime().exec("pgrep 'chromedriver' | xargs kill");
         //another way
