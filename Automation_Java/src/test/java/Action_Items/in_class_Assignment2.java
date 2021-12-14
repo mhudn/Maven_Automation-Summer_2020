@@ -5,7 +5,6 @@ import Reusable_Libraries.Reusable_Methods;
 import Reusable_Libraries.Reusable_Methods_Loggers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
